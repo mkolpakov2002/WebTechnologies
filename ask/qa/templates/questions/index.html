@@ -1,0 +1,18 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>{{question.title}}</h1></a>
+		<p>{{question.text}}</p>
+		<hr/>
+		{%for a in answers %}
+			<p>{{a.text}}</p>
+		{%endfor%}
+		<hr/>
+		<form action="{{q.get_url}}" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>
